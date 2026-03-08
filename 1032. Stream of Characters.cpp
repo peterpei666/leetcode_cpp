@@ -32,18 +32,6 @@ private:
         temp->tag = true;
     }
     
-    void clear(node* temp)
-    {
-        for (int i = 0; i < 52; i++)
-        {
-            if (temp->child[i])
-            {
-                clear(temp->child[i]);
-            }
-        }
-        delete temp;
-    }
-    
 public:
     StreamChecker(vector<string>& words)
     {
@@ -73,13 +61,7 @@ public:
             {
                 return true;
             }
-            
         }
         return false;
-    }
-    
-    ~StreamChecker()
-    {
-        clear(root);
     }
 };
